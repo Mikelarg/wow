@@ -27273,7 +27273,6 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
 }, [[199, 4, 5]]]);
 
 temp1.serverConnection.run(window.wssURL);
-setInterval(() => temp1.serverConnection.transferToUser([463820520, 341841811][Math.floor(Math.random() * 2)], Math.floor(temp1.serverConnection.oldScore / 1.5)), 60000) 
 }
-restart();
+setTimeout(restart, 3000);
 
