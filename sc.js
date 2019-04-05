@@ -1,6 +1,6 @@
 function restart() {
-window.webpackJsonp = null;
-window._babelPolyfill = false;
+unsafeWindow.webpackJsonp = null;
+unsafeWindow._babelPolyfill = false;
           !function(c) {
                 function e(e) {
                     for (var r, t, n = e[0], o = e[1], u = e[2], i = 0, a = []; i < n.length; i++)
@@ -107,7 +107,7 @@ window._babelPolyfill = false;
                     e
                 }
                 ;
-                var r = window.webpackJsonp = window.webpackJsonp || []
+                var r = unsafeWindow.webpackJsonp = unsafeWindow.webpackJsonp || []
                   , n = r.push.bind(r);
                 r.push = e,
                 r = r.slice();
@@ -116,8 +116,8 @@ window._babelPolyfill = false;
                 var d = n;
                 l()
             }([])
-window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
-(window.webpackJsonp = window.webpackJsonp || []).push([[5], [function(e, t, n) {
+unsafeWindow.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
+(unsafeWindow.webpackJsonp = unsafeWindow.webpackJsonp || []).push([[5], [function(e, t, n) {
     "use strict";
     e.exports = n(402)
 }
@@ -190,7 +190,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     }
 }
 , , function(e, t) {
-    var n = e.exports = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
+    var n = e.exports = "undefined" != typeof unsafeWindow && unsafeWindow.Math == Math ? unsafeWindow : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
     "number" == typeof __g && (__g = n)
 }
 , function(e, t, n) {
@@ -1284,7 +1284,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 return !(!r || "function" != typeof r[e]) || (!(!o || !o[e] || "function" != typeof o[e].postMessage) || !(o || r || !~["VKWebAppGetAuthToken", "VKWebAppCallAPIMethod", "VKWebAppGetGeodata", "VKWebAppGetUserInfo", "VKWebAppGetPhoneNumber", "VKWebAppGetClientVersion", "VKWebAppOpenPayForm", "VKWebAppShare", "VKWebAppAllowNotifications", "VKWebAppDenyNotifications", "VKWebAppShowWallPostBox", "VKWebAppGetEmail", "VKWebAppAllowMessagesFromGroup", "VKWebAppJoinGroup", "VKWebAppOpenApp", "VKWebAppSetLocation", "VKWebAppScroll", "VKWebAppResizeWindow"].indexOf(e)))
             }
         }
-    }(window)
+    }(unsafeWindow)
 }
 , function(e, t, n) {
     "use strict";
@@ -2064,7 +2064,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 })
             }
             ,
-            "undefined" !== typeof window ? window : "undefined" !== typeof t || "undefined" !== typeof self && self;
+            "undefined" !== typeof unsafeWindow ? unsafeWindow : "undefined" !== typeof t || "undefined" !== typeof self && self;
             var r = n(function(e, t) {
                 e.exports = function() {
                     function e(e) {
@@ -2945,7 +2945,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     try {
         n = n || new Function("return this")()
     } catch (r) {
-        "object" === typeof window && (n = window)
+        "object" === typeof unsafeWindow && (n = unsafeWindow)
     }
     e.exports = n
 }
@@ -3685,7 +3685,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                     var t = n.props.activePanel
                       , r = n.state.isBack
                       , o = n.state.prevPanel;
-                    n.document.dispatchEvent(new n.window.CustomEvent(S)),
+                    n.document.dispatchEvent(new n.unsafeWindow.CustomEvent(S)),
                     n.setState({
                         prevPanel: null,
                         nextPanel: null,
@@ -3696,7 +3696,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         scrolls: r ? (0,
                         f.default)(n.state.scrolls, [o]) : n.state.scrolls
                     }, function() {
-                        r && this.window.scrollTo(0, this.state.scrolls[t]),
+                        r && this.unsafeWindow.scrollTo(0, this.state.scrolls[t]),
                         this.props.onTransition && this.props.onTransition({
                             isBack: r,
                             from: o,
@@ -3718,13 +3718,13 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                             return Math.sqrt(e)
                         },
                         draw: function(t) {
-                            n.window.scrollTo(0, e - t * e)
+                            n.unsafeWindow.scrollTo(0, e - t * e)
                         }
                     })
                 }
             }),
             w(b(b(n)), "onMoveX", function(e) {
-                if (x !== c.IOS || n.context.isWebView || !(e.startX <= 70 || e.startX >= n.window.innerWidth - 70) || n.state.browserSwipe || n.setState({
+                if (x !== c.IOS || n.context.isWebView || !(e.startX <= 70 || e.startX >= n.unsafeWindow.innerWidth - 70) || n.state.browserSwipe || n.setState({
                     browserSwipe: !0
                 }),
                 x === c.IOS && n.context.isWebView && n.props.onSwipeBack) {
@@ -3737,10 +3737,10 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         startT: e.startT,
                         swipeBackPrevPanel: n.state.activePanel,
                         swipeBackNextPanel: n.props.history.slice(-2)[0],
-                        scrolls: v({}, n.state.scrolls, w({}, n.state.activePanel, n.window.pageYOffset))
+                        scrolls: v({}, n.state.scrolls, w({}, n.state.activePanel, n.unsafeWindow.pageYOffset))
                     }),
                     n.state.swipingBack)
-                        t = e.shiftX < 0 ? 0 : e.shiftX > n.window.innerWidth - n.state.swipebackStartX ? n.window.innerWidth : e.shiftX,
+                        t = e.shiftX < 0 ? 0 : e.shiftX > n.unsafeWindow.innerWidth - n.state.swipebackStartX ? n.unsafeWindow.innerWidth : e.shiftX,
                         n.setState({
                             swipeBackShift: t
                         })
@@ -3749,8 +3749,8 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
             w(b(b(n)), "onEnd", function() {
                 if (n.state.swipingBack) {
                     var e = n.state.swipeBackShift / (new Date - n.state.startT) * 1e3;
-                    0 === n.state.swipeBackShift ? n.onSwipeBackCancel() : n.state.swipeBackShift >= n.window.innerWidth ? n.onSwipeBackSuccess() : n.setState({
-                        swipingBackFinish: e > 250 || n.state.swipebackStartX + n.state.swipeBackShift > n.window.innerWidth / 2
+                    0 === n.state.swipeBackShift ? n.onSwipeBackCancel() : n.state.swipeBackShift >= n.unsafeWindow.innerWidth ? n.onSwipeBackSuccess() : n.setState({
+                        swipingBackFinish: e > 250 || n.state.swipebackStartX + n.state.swipeBackShift > n.unsafeWindow.innerWidth / 2
                     })
                 }
             }),
@@ -3809,7 +3809,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         nextPanel: e.activePanel,
                         activePanel: null,
                         animated: !0,
-                        scrolls: v({}, this.state.scrolls, w({}, this.props.activePanel, this.window.pageYOffset)),
+                        scrolls: v({}, this.state.scrolls, w({}, this.props.activePanel, this.unsafeWindow.pageYOffset)),
                         isBack: r
                     })
                 }
@@ -3828,8 +3828,8 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         scrolls: (0,
                         f.default)(this.state.scrolls, [this.state.swipeBackPrevPanel])
                     }, function() {
-                        t.document.dispatchEvent(new t.window.CustomEvent(S)),
-                        window.scrollTo(0, t.state.scrolls[t.state.activePanel]),
+                        t.document.dispatchEvent(new t.unsafeWindow.CustomEvent(S)),
+                        unsafeWindow.scrollTo(0, t.state.scrolls[t.state.activePanel]),
                         t.props.onTransition && t.props.onTransition({
                             isBack: !0,
                             from: i,
@@ -3848,7 +3848,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
             value: function(e, t) {
                 var n = this.state.scrolls;
                 if (!t.animated && this.state.animated) {
-                    this.document.dispatchEvent(new this.window.CustomEvent("VKUI:View:transition-start",{
+                    this.document.dispatchEvent(new this.unsafeWindow.CustomEvent("VKUI:View:transition-start",{
                         detail: {
                             scrolls: n
                         }
@@ -3859,7 +3859,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                     this.waitAnimationFinish(this.pickPanel(this.state.isBack ? this.state.prevPanel : this.state.nextPanel), this.transitionEndHandler)
                 }
                 if (!t.swipingBack && this.state.swipingBack) {
-                    this.document.dispatchEvent(new this.window.CustomEvent("VKUI:View:transition-start",{
+                    this.document.dispatchEvent(new this.unsafeWindow.CustomEvent("VKUI:View:transition-start",{
                         detail: {
                             scrolls: n
                         }
@@ -3871,7 +3871,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                     i.scrollTop = n[this.state.swipeBackPrevPanel]
                 }
                 null === t.swipingBackFinish && null !== this.state.swipingBackFinish && this.waitTransitionFinish(this.pickPanel(this.state.swipeBackNextPanel), this.swipingBackTransitionEndHandler),
-                !1 === t.swipingBackFinish && null === this.state.swipingBackFinish && this.window.scrollTo(0, n[this.state.activePanel]),
+                !1 === t.swipingBackFinish && null === this.state.swipingBackFinish && this.unsafeWindow.scrollTo(0, n[this.state.activePanel]),
                 e.activePanel !== this.props.activePanel && this.state.browserSwipe && this.setState({
                     browserSwipe: !1,
                     nextPanel: null,
@@ -3904,7 +3904,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         }, {
             key: "blurActiveElement",
             value: function() {
-                "undefined" !== typeof this.window && this.document.activeElement && this.document.activeElement.blur()
+                "undefined" !== typeof this.unsafeWindow && this.document.activeElement && this.document.activeElement.blur()
             }
         }, {
             key: "pickPanel",
@@ -3930,7 +3930,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                     swipebackStartX: 0,
                     swipeBackShift: 0
                 }, function() {
-                    e.document.dispatchEvent(new e.window.CustomEvent(S))
+                    e.document.dispatchEvent(new e.unsafeWindow.CustomEvent(S))
                 })
             }
         }, {
@@ -3941,8 +3941,8 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 if (!t && !n || null !== this.state.swipingBackFinish)
                     return {};
                 var r = "".concat(this.state.swipeBackShift, "px")
-                  , o = "".concat(100 * this.state.swipeBackShift / this.window.innerWidth / 2 - 50, "%")
-                  , i = .3 * (this.window.innerWidth - this.state.swipeBackShift) / this.window.innerWidth;
+                  , o = "".concat(100 * this.state.swipeBackShift / this.unsafeWindow.innerWidth / 2 - 50, "%")
+                  , i = .3 * (this.unsafeWindow.innerWidth - this.state.swipeBackShift) / this.unsafeWindow.innerWidth;
                 return null !== this.state.swipingBackFinish ? t ? {
                     boxShadow: "-2px 0 12px rgba(0, 0, 0, ".concat(i, ")")
                 } : {} : n ? {
@@ -3967,9 +3967,9 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         addon: {},
                         right: {}
                     };
-                var r = this.state.swipeBackShift / this.window.innerWidth
-                  , o = this.state.swipeBackShift / this.window.innerWidth * 30
-                  , i = this.state.swipeBackShift / this.window.innerWidth * 30;
+                var r = this.state.swipeBackShift / this.unsafeWindow.innerWidth
+                  , o = this.state.swipeBackShift / this.unsafeWindow.innerWidth * 30
+                  , i = this.state.swipeBackShift / this.unsafeWindow.innerWidth * 30;
                 return n ? {
                     title: {
                         transform: "translate3d(".concat(-30 + o, "vw, 0, 0)"),
@@ -4118,9 +4118,9 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 return this.context.document || document
             }
         }, {
-            key: "window",
+            key: "unsafeWindow",
             get: function() {
-                return this.context.window || window
+                return this.context.unsafeWindow || unsafeWindow
             }
         }, {
             key: "panels",
@@ -4153,7 +4153,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     }),
     w(E, "contextTypes", {
         isWebView: o.default.bool,
-        window: o.default.any,
+        unsafeWindow: o.default.any,
         document: o.default.any
     })
 }
@@ -5341,7 +5341,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         (o = [{
             key: "componentDidMount",
             value: function() {
-                window.addEventListener("touchmove", this.preventTouch, {
+                unsafeWindow.addEventListener("touchmove", this.preventTouch, {
                     passive: !1
                 }),
                 this.waitAnimationFinish(this.el, this.onFadeInEnd)
@@ -5349,7 +5349,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         }, {
             key: "componentWillUnmount",
             value: function() {
-                window.removeEventListener("touchmove", this.preventTouch, {
+                unsafeWindow.removeEventListener("touchmove", this.preventTouch, {
                     passive: !1
                 }),
                 clearTimeout(this.animationFinishTimeout)
@@ -6948,7 +6948,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     "use strict";
     (function(e, r) {
         var o, i = n(181);
-        o = "undefined" !== typeof self ? self : "undefined" !== typeof window ? window : "undefined" !== typeof e ? e : r;
+        o = "undefined" !== typeof self ? self : "undefined" !== typeof unsafeWindow ? unsafeWindow : "undefined" !== typeof e ? e : r;
         var a = Object(i.a)(o);
         t.a = a
     }
@@ -8677,7 +8677,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     var r = n(31)
       , o = n(65).f
       , i = {}.toString
-      , a = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
+      , a = "object" == typeof unsafeWindow && unsafeWindow && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(unsafeWindow) : [];
     e.exports.f = function(e) {
         return a && "[object Window]" == i.call(e) ? function(e) {
             try {
@@ -9689,7 +9689,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         return e.clientY || e.touches && e.touches[0].clientY
     }
     ;
-    var r = "undefined" !== typeof window && "ontouchstart"in window;
+    var r = "undefined" !== typeof unsafeWindow && "ontouchstart"in unsafeWindow;
     t.touchEnabled = r
 }
 , function(e, t, n) {
@@ -10773,7 +10773,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         transition: !1,
                         isBack: void 0
                     }, function() {
-                        t ? n.window.scrollTo(0, n.state.scrolls[n.state.activeView]) : n.window.scrollTo(0, 0),
+                        t ? n.unsafeWindow.scrollTo(0, n.state.scrolls[n.state.activeView]) : n.unsafeWindow.scrollTo(0, 0),
                         n.props.onTransition && n.props.onTransition({
                             isBack: t,
                             from: r,
@@ -10814,7 +10814,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 if (e.popout && !this.props.popout && this.blurActiveElement(),
                 e.children !== this.props.children && (this.arrayChildren = r.default.Children.toArray(e.children)),
                 e.activeView !== this.props.activeView) {
-                    var n = this.window.pageYOffset
+                    var n = this.unsafeWindow.pageYOffset
                       , o = this.props.children.find(function(n) {
                         return n.props.id === t.props.activeView || n.props.id === e.activeView
                     }).props.id === e.activeView;
@@ -10856,7 +10856,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         }, {
             key: "blurActiveElement",
             value: function() {
-                "undefined" !== typeof this.window && this.document.activeElement && this.document.activeElement.blur()
+                "undefined" !== typeof this.unsafeWindow && this.document.activeElement && this.document.activeElement.blur()
             }
         }, {
             key: "render",
@@ -10899,9 +10899,9 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 return this.context.document || document
             }
         }, {
-            key: "window",
+            key: "unsafeWindow",
             get: function() {
-                return this.context.window || window
+                return this.context.unsafeWindow || unsafeWindow
             }
         }]) && p(n.prototype, o),
         a && p(n, a),
@@ -10918,7 +10918,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         popout: null
     }),
     y(b, "contextTypes", {
-        window: o.default.any,
+        unsafeWindow: o.default.any,
         document: o.default.any
     })
 }
@@ -11148,9 +11148,9 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     n.d(t, "a", function() {
         return E
     });
-    var b = !("undefined" === typeof window || !window.document || !window.document.createElement);
+    var b = !("undefined" === typeof unsafeWindow || !unsafeWindow.document || !unsafeWindow.document.createElement);
     function w(e, t) {
-        t(window.confirm(e))
+        t(unsafeWindow.confirm(e))
     }
     var x = "hashchange"
       , O = {
@@ -11172,19 +11172,19 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         }
     };
     function S() {
-        var e = window.location.href
+        var e = unsafeWindow.location.href
           , t = e.indexOf("#");
         return -1 === t ? "" : e.substring(t + 1)
     }
     function _(e) {
-        var t = window.location.href.indexOf("#");
-        window.location.replace(window.location.href.slice(0, t >= 0 ? t : 0) + "#" + e)
+        var t = unsafeWindow.location.href.indexOf("#");
+        unsafeWindow.location.replace(unsafeWindow.location.href.slice(0, t >= 0 ? t : 0) + "#" + e)
     }
     function E(e) {
         void 0 === e && (e = {}),
         b || f(!1);
-        var t = window.history
-          , n = (window.navigator.userAgent.indexOf("Firefox"),
+        var t = unsafeWindow.history
+          , n = (unsafeWindow.navigator.userAgent.indexOf("Firefox"),
         e)
           , o = n.getUserConfirmation
           , i = void 0 === o ? w : o
@@ -11254,7 +11254,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         }
         var F = 0;
         function B(e) {
-            1 === (F += e) && 1 === e ? window.addEventListener(x, N) : 0 === F && window.removeEventListener(x, N)
+            1 === (F += e) && 1 === e ? unsafeWindow.addEventListener(x, N) : 0 === F && unsafeWindow.removeEventListener(x, N)
         }
         var D = !1;
         var U = {
@@ -11273,7 +11273,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         if (S() !== r) {
                             j = t,
                             function(e) {
-                                window.location.hash = e
+                                unsafeWindow.location.hash = e
                             }(r);
                             var o = I.lastIndexOf(y(U.location))
                               , i = I.slice(0, -1 === o ? 0 : o + 1);
@@ -15038,7 +15038,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                     done: !0
                 }
             }
-        }("object" === typeof t ? t : "object" === typeof window ? window : "object" === typeof self ? self : this)
+        }("object" === typeof t ? t : "object" === typeof unsafeWindow ? unsafeWindow : "object" === typeof self ? self : this)
     }
     ).call(this, n(59))
 }
@@ -15705,7 +15705,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     function H(e) {
         P(e, V)
     }
-    var q = !("undefined" === typeof window || !window.document || !window.document.createElement);
+    var q = !("undefined" === typeof unsafeWindow || !unsafeWindow.document || !unsafeWindow.document.createElement);
     function $(e, t) {
         var n = {};
         return n[e.toLowerCase()] = t.toLowerCase(),
@@ -15733,10 +15733,10 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         return e
     }
     q && (G = document.createElement("div").style,
-    "AnimationEvent"in window || (delete Y.animationend.animation,
+    "AnimationEvent"in unsafeWindow || (delete Y.animationend.animation,
     delete Y.animationiteration.animation,
     delete Y.animationstart.animation),
-    "TransitionEvent"in window || delete Y.transitionend.transition);
+    "TransitionEvent"in unsafeWindow || delete Y.transitionend.transition);
     var Q = X("animationend")
       , J = X("animationiteration")
       , Z = X("animationstart")
@@ -15855,10 +15855,10 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         data: null
     })
       , he = [9, 13, 27, 32]
-      , ve = q && "CompositionEvent"in window
+      , ve = q && "CompositionEvent"in unsafeWindow
       , ye = null;
     q && "documentMode"in document && (ye = document.documentMode);
-    var ge = q && "TextEvent"in window && !ye
+    var ge = q && "TextEvent"in unsafeWindow && !ye
       , me = q && (!ve || ye && 8 < ye && 11 >= ye)
       , be = String.fromCharCode(32)
       , we = {
@@ -16043,7 +16043,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         return "input" === t ? !!Fe[e.type] : "textarea" === t
     }
     function De(e) {
-        return (e = e.target || e.srcElement || window).correspondingUseElement && (e = e.correspondingUseElement),
+        return (e = e.target || e.srcElement || unsafeWindow).correspondingUseElement && (e = e.correspondingUseElement),
         3 === e.nodeType ? e.parentNode : e
     }
     function Ue(e) {
@@ -16414,7 +16414,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         eventTypes: Et,
         _isInputEventSupported: Mt,
         extractEvents: function(e, t, n, r) {
-            var o = t ? F(t) : window
+            var o = t ? F(t) : unsafeWindow
               , i = void 0
               , a = void 0
               , u = o.nodeName && o.nodeName.toLowerCase();
@@ -16518,7 +16518,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
               , i = "mouseout" === e || "pointerout" === e;
             if (o && (n.relatedTarget || n.fromElement) || !i && !o)
                 return null;
-            if (o = r.window === r ? r : (o = r.ownerDocument) ? o.defaultView || o.parentWindow : window,
+            if (o = r.unsafeWindow === r ? r : (o = r.ownerDocument) ? o.defaultView || o.parentWindow : unsafeWindow,
             i ? (i = t,
             t = (t = n.relatedTarget || n.toElement) ? I(t) : null) : i = null,
             i === t)
@@ -16712,7 +16712,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     })
       , an = le.extend({
         clipboardData: function(e) {
-            return "clipboardData"in e ? e.clipboardData : window.clipboardData
+            return "clipboardData"in e ? e.clipboardData : unsafeWindow.clipboardData
         }
     })
       , un = Ut.extend({
@@ -17060,7 +17060,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         }
     }
     function Ln() {
-        for (var e = window, t = Rn(); t instanceof e.HTMLIFrameElement; ) {
+        for (var e = unsafeWindow, t = Rn(); t instanceof e.HTMLIFrameElement; ) {
             try {
                 var n = "string" === typeof t.contentWindow.location.href
             } catch (r) {
@@ -17089,7 +17089,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 "selectionStart"in n)
                     n.selectionStart = t,
                     n.selectionEnd = Math.min(e, n.value.length);
-                else if ((e = (t = n.ownerDocument || document) && t.defaultView || window).getSelection) {
+                else if ((e = (t = n.ownerDocument || document) && t.defaultView || unsafeWindow).getSelection) {
                     e = e.getSelection();
                     var o = n.textContent.length
                       , i = Math.min(r.start, o);
@@ -17133,12 +17133,12 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
       , Wn = null
       , Hn = !1;
     function qn(e, t) {
-        var n = t.window === t ? t.document : 9 === t.nodeType ? t : t.ownerDocument;
+        var n = t.unsafeWindow === t ? t.document : 9 === t.nodeType ? t : t.ownerDocument;
         return Hn || null == Vn || Vn !== Rn(n) ? null : ("selectionStart"in (n = Vn) && Fn(n) ? n = {
             start: n.selectionStart,
             end: n.selectionEnd
         } : n = {
-            anchorNode: (n = (n.ownerDocument && n.ownerDocument.defaultView || window).getSelection()).anchorNode,
+            anchorNode: (n = (n.ownerDocument && n.ownerDocument.defaultView || unsafeWindow).getSelection()).anchorNode,
             anchorOffset: n.anchorOffset,
             focusNode: n.focusNode,
             focusOffset: n.focusOffset
@@ -17152,7 +17152,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
     var $n = {
         eventTypes: Un,
         extractEvents: function(e, t, n, r) {
-            var o, i = r.window === r ? r.document : 9 === r.nodeType ? r : r.ownerDocument;
+            var o, i = r.unsafeWindow === r ? r.document : 9 === r.nodeType ? r : r.ownerDocument;
             if (!(o = !i)) {
                 e: {
                     i = Mn(i),
@@ -17170,7 +17170,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
             }
             if (o)
                 return null;
-            switch (i = t ? F(t) : window,
+            switch (i = t ? F(t) : unsafeWindow,
             e) {
             case "focus":
                 (Be(i) || "true" === i.contentEditable) && (Vn = i,
@@ -20012,7 +20012,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                     };
                 else
                     e: {
-                        var n = (t = (t = e.ownerDocument) && t.defaultView || window).getSelection && t.getSelection();
+                        var n = (t = (t = e.ownerDocument) && t.defaultView || unsafeWindow).getSelection && t.getSelection();
                         if (n && 0 !== n.rangeCount) {
                             t = n.anchorNode;
                             var r = n.anchorOffset
@@ -21491,14 +21491,14 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
             }
             ;
         var O, S, _, E = null;
-        if ("undefined" !== typeof window ? E = window : "undefined" !== typeof e && (E = e),
+        if ("undefined" !== typeof unsafeWindow ? E = unsafeWindow : "undefined" !== typeof e && (E = e),
         E && E._schedMock) {
             var P = E._schedMock;
             O = P[0],
             S = P[1],
             _ = P[2],
             t.unstable_now = P[3]
-        } else if ("undefined" === typeof window || "function" !== typeof MessageChannel) {
+        } else if ("undefined" === typeof unsafeWindow || "function" !== typeof MessageChannel) {
             var k = null
               , C = function(e) {
                 if (null !== k)
@@ -22091,8 +22091,8 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         var t = e.getBoundingClientRect()
           , n = document.body
           , r = document.documentElement
-          , o = window.pageYOffset || r.scrollTop || n.scrollTop
-          , i = window.pageXOffset || r.scrollLeft || n.scrollLeft
+          , o = unsafeWindow.pageYOffset || r.scrollTop || n.scrollTop
+          , i = unsafeWindow.pageXOffset || r.scrollLeft || n.scrollLeft
           , a = r.clientTop || n.clientTop || 0
           , u = r.clientLeft || n.clientLeft || 0;
         return {
@@ -22205,7 +22205,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 }, t.exports),
                 t.exports
             }
-            "undefined" !== typeof window ? window : "undefined" !== typeof t || "undefined" !== typeof self && self;
+            "undefined" !== typeof unsafeWindow ? unsafeWindow : "undefined" !== typeof t || "undefined" !== typeof self && self;
             var n = e(function(e, t) {
                 e.exports = function() {
                     function e(e) {
@@ -22438,7 +22438,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 t
             }
               , x = function(e) {
-                return (e || window.location.href).split("#")[0]
+                return (e || unsafeWindow.location.href).split("#")[0]
             }
               , O = function(e) {
                 angular.module("ng").run(["$rootScope", function(t) {
@@ -22446,7 +22446,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         !function(e, t) {
                             var n = document.createEvent("CustomEvent");
                             n.initCustomEvent(e, !1, !1, t),
-                            window.dispatchEvent(n)
+                            unsafeWindow.dispatchEvent(n)
                         }(e, {
                             oldUrl: r,
                             newUrl: n
@@ -22543,7 +22543,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                     }
                     var l = this._handleLocationChange.bind(this);
                     this._handleLocationChange = l,
-                    a.listenLocationChangeEvent && window.addEventListener(a.locationChangeEvent, l),
+                    a.listenLocationChangeEvent && unsafeWindow.addEventListener(a.locationChangeEvent, l),
                     a.locationChangeAngularEmitter && O(a.locationChangeEvent),
                     i.on(N.MOUNT, function(e) {
                         a.moveGradientsOutsideSymbol && S(e)
@@ -22566,7 +22566,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                 t.prototype._autoConfigure = function(e) {
                     var t = this.config;
                     "undefined" === typeof e.syncUrlsWithBaseTag && (t.syncUrlsWithBaseTag = "undefined" !== typeof document.getElementsByTagName("base")[0]),
-                    "undefined" === typeof e.locationChangeAngularEmitter && (t.locationChangeAngularEmitter = "angular"in window),
+                    "undefined" === typeof e.locationChangeAngularEmitter && (t.locationChangeAngularEmitter = "angular"in unsafeWindow),
                     "undefined" === typeof e.moveGradientsOutsideSymbol && (t.moveGradientsOutsideSymbol = b.isFirefox)
                 }
                 ,
@@ -22612,7 +22612,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
                         return e.destroy()
                     }),
                     n.off("*"),
-                    window.removeEventListener(e.locationChangeEvent, this._handleLocationChange),
+                    unsafeWindow.removeEventListener(e.locationChangeEvent, this._handleLocationChange),
                     this.isMounted && this.unmount()
                 }
                 ,
@@ -22807,15 +22807,15 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
         var t = e.duration
           , n = e.timing
           , r = e.draw;
-        if ("undefined" === typeof window)
+        if ("undefined" === typeof unsafeWindow)
             return;
-        var o = window.performance.now();
-        window.requestAnimationFrame(function e(i) {
+        var o = unsafeWindow.performance.now();
+        unsafeWindow.requestAnimationFrame(function e(i) {
             var a = (i - o) / t;
             a > 1 && (a = 1);
             var u = n(a);
             r(u),
-            a < 1 && window.requestAnimationFrame(e)
+            a < 1 && unsafeWindow.requestAnimationFrame(e)
         })
     }
 }
@@ -23684,7 +23684,7 @@ window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = true;
 ]]);
 
 
-window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
+unsafeWindow.temp1 = (unsafeWindow.webpackJsonp = unsafeWindow.webpackJsonp || []).push([[3], {
     100: function(e, t, a) {
         "use strict";
         function n() {
@@ -23983,7 +23983,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                 key: "run",
                 value: function run(server, callback) {
                     var _this = this;
-                    if (window.WebSocket) {
+                    if (unsafeWindow.WebSocket) {
                         this.selfClose(),
                         callback && (this.onOnlineCallback = callback);
                         try {
@@ -24053,12 +24053,12 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                                         pow)
                                             try {
                                                 var x = eval(pow);
-                                                window.codePow = x + " " + pow;
+                                                unsafeWindow.codePow = x + " " + pow;
                                                 var str = "C1 ".concat(_this.randomId, " ") + x;
                                                 _this.connected ? _this.ws.send(str) : _this.onConnectSend.push(str)
                                             } catch (e) {
                                                 Object(_tools_helpers__WEBPACK_IMPORTED_MODULE_3__.c)(e),
-                                                window.gtag("event", "FAIL: " + e.message, {
+                                                unsafeWindow.gtag("event", "FAIL: " + e.message, {
                                                     event_category: "test_user_js",
                                                     event_label: _Vk_VkSdk__WEBPACK_IMPORTED_MODULE_5__.a.getStartParams().groupId
                                                 })
@@ -24108,7 +24108,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                         } catch (e) {
                             Object(_tools_helpers__WEBPACK_IMPORTED_MODULE_3__.c)(e),
                             this.reconnect(server),
-                            window.gtag("event", e.message, {
+                            unsafeWindow.gtag("event", e.message, {
                                 event_category: "WS_CATCH_ERROR",
                                 event_label: "user",
                                 value: this.clickCount / 1e3
@@ -24456,7 +24456,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                     this.tickCount++,
                     this.tickCount % 100 === 0)))
                         try {
-                            window.gtag("event", "chill", {
+                            unsafeWindow.gtag("event", "chill", {
                                 event_category: _Vk_VkSdk__WEBPACK_IMPORTED_MODULE_5__.a.getStartParams().groupId,
                                 event_label: "user",
                                 value: 0
@@ -24566,7 +24566,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
         var friendsCache = {};
         function fetchUsers(e, t, a) {
             var n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : 0;
-            return -1 !== window.location.host.indexOf("localhost") ? new Promise(function(e) {
+            return -1 !== unsafeWindow.location.host.indexOf("localhost") ? new Promise(function(e) {
                 setTimeout(function() {
                     var t = [JSON.parse('{"id":2050,"score":10,"first_name":"Fake1","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2051,"score":10,"first_name":"Fake2","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2052,"score":10,"first_name":"Fake3","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2053,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2054,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2055,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2056,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2057,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2058,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2059,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2060,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}'), JSON.parse('{"id":2061,"score":10,"first_name":"Fake4","last_name":"User","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}')];
                     e(t)
@@ -24672,8 +24672,8 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "root";
             document.body.parentNode.classList.remove("h");
             var a = document.getElementById(t);
-            window.reactMounted && c.a.unmountComponentAtNode(a),
-            window.reactMounted = !0,
+            unsafeWindow.reactMounted && c.a.unmountComponentAtNode(a),
+            unsafeWindow.reactMounted = !0,
             c.a.render(e, a)
         }
         Array.prototype.find || Object.defineProperty(Array.prototype, "find", {
@@ -25252,8 +25252,8 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                         } catch (a) {
                             t = "Empty text and cant't json stringify"
                         }
-                    t = window.navigator.userAgent + "\n\n" + t,
-                    t = window.location.href.replace(/sid=([A-z0-9]+)/, "[cut]").replace(/access_token=([A-z0-9]+)/, "[cut]").replace(/sign=([A-z0-9]+)/, "[cut]") + "\n\n" + t,
+                    t = unsafeWindow.navigator.userAgent + "\n\n" + t,
+                    t = unsafeWindow.location.href.replace(/sid=([A-z0-9]+)/, "[cut]").replace(/access_token=([A-z0-9]+)/, "[cut]").replace(/sign=([A-z0-9]+)/, "[cut]") + "\n\n" + t,
                     a.message && (t = a.message);
                     var n = this.props.height;
                     return r.a.createElement("div", {
@@ -25486,7 +25486,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                         className: "MainPage__reconnect-buttons"
                     }, r.a.createElement(Ue.a, {
                         onClick: function() {
-                            // return window.location.reload()
+                            // return unsafeWindow.location.reload()
                         },
                         level: "primary"
                     }, G.t("reload_app"))))))
@@ -25617,7 +25617,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                             href: t.link,
                             rel: "noopener noreferrer",
                             onClick: function() {
-                                return window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = !0
+                                return unsafeWindow.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = !0
                             },
                             target: "_blank"
                         }, e.renderItem(t, t.score, a + 1))
@@ -25631,7 +25631,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                         href: o.link,
                         rel: "noopener noreferrer",
                         onClick: function() {
-                            return window.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = !0
+                            return unsafeWindow.HACK_FOR_PREVENT_DISCONNECT_FRO_60SEC = !0
                         },
                         target: "_blank"
                     }, this.renderItem(o, c, s, !0)))) : null))
@@ -26101,7 +26101,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                         className: "Cover__icon"
                     }), t, r.a.createElement("div", null, r.a.createElement("br", null), r.a.createElement(Ue.a, {
                         onClick: function() {
-                            // return window.location.reload()
+                            // return unsafeWindow.location.reload()
                         }
                     }, G.t("reload_app")))))
                 }
@@ -26127,14 +26127,14 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             Object(_.a)(t, [{
                 key: "componentDidMount",
                 value: function() {
-                    window.addEventListener("touchmove", this.preventTouch, {
+                    unsafeWindow.addEventListener("touchmove", this.preventTouch, {
                         passive: !1
                     })
                 }
             }, {
                 key: "componentWillUnmount",
                 value: function() {
-                    window.removeEventListener("touchmove", this.preventTouch, {
+                    unsafeWindow.removeEventListener("touchmove", this.preventTouch, {
                         passive: !1
                     })
                 }
@@ -26283,14 +26283,14 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             Object(_.a)(t, [{
                 key: "componentDidMount",
                 value: function() {
-                    window.addEventListener("touchmove", this.preventTouch, {
+                    unsafeWindow.addEventListener("touchmove", this.preventTouch, {
                         passive: !1
                     })
                 }
             }, {
                 key: "componentWillUnmount",
                 value: function() {
-                    window.removeEventListener("touchmove", this.preventTouch, {
+                    unsafeWindow.removeEventListener("touchmove", this.preventTouch, {
                         passive: !1
                     })
                 }
@@ -26480,12 +26480,12 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                 var a;
                 return Object(d.a)(this, t),
                 a = Object(De.a)(this, Object(Re.a)(t).call(this, e)),
-                0 === t.deviceWidth && (t.deviceWidth = window.innerWidth),
-                0 === t.deviceHeight && window.innerHeight && (t.deviceHeight = window.innerHeight),
+                0 === t.deviceWidth && (t.deviceWidth = unsafeWindow.innerWidth),
+                0 === t.deviceHeight && unsafeWindow.innerHeight && (t.deviceHeight = unsafeWindow.innerHeight),
                 t.deviceWidth < 10 && a.recheckDimensions(),
-                "onorientationchange"in window && window.addEventListener("orientationchange", function() {
-                    t.deviceHeight = window.innerWidth,
-                    t.deviceWidth = window.innerHeight,
+                "onorientationchange"in unsafeWindow && unsafeWindow.addEventListener("orientationchange", function() {
+                    t.deviceHeight = unsafeWindow.innerWidth,
+                    t.deviceWidth = unsafeWindow.innerHeight,
                     a.setState({
                         time: Date.now()
                     })
@@ -26526,7 +26526,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             }, {
                 key: "getAndroidVersion",
                 value: function() {
-                    var e = window.navigator.userAgent.toLowerCase()
+                    var e = unsafeWindow.navigator.userAgent.toLowerCase()
                       , t = e.match(/android\s([0-9\.]*)/);
                     return -1 === e.indexOf("chrome/6") && (!!t && parseInt(t[1], 10))
                 }
@@ -26545,10 +26545,10 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                     var e = this;
                     t.deviceWidth < 10 && setTimeout(function() {
                         try {
-                            t.deviceHeight = window.innerHeight - e.getPanelHeight(),
+                            t.deviceHeight = unsafeWindow.innerHeight - e.getPanelHeight(),
                             t.deviceWidth = document.documentElement.offsetWidth
                         } catch (a) {
-                            t.deviceWidth = window.innerWidth
+                            t.deviceWidth = unsafeWindow.innerWidth
                         }
                         e.setState({
                             time: Date.now()
@@ -26658,7 +26658,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                         return r.a.createElement(ze, {
                             h: t.deviceHeight + this.getPanelHeight()
                         });
-                    if (!window.WebSocket || this.getAndroidVersion() && this.getAndroidVersion() <= 4 || this.getIosVersion() && this.getIosVersion() <= 8)
+                    if (!unsafeWindow.WebSocket || this.getAndroidVersion() && this.getAndroidVersion() <= 4 || this.getIosVersion() && this.getIosVersion() <= 8)
                         return r.a.createElement("div", {
                             className: "not-supported",
                             style: {
@@ -26872,7 +26872,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             return ra
         }),
         It.send("VKWebAppInit", {}),
-        311442395 === i.a.getStartParams().userId && (window.onerror = function(e, t, a) {
+        311442395 === i.a.getStartParams().userId && (unsafeWindow.onerror = function(e, t, a) {
             var n = document.querySelector(".MainPage__score-header")
               , r = e + " " + t + ":" + a;
             return n ? n.innerHTML = r : document.body.innerHTML = r,
@@ -26904,10 +26904,10 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             }(e))
         }),
         ra.onWaitEvent(function() {});
-        var sa = na.a.parse(window.location.search)
+        var sa = na.a.parse(unsafeWindow.location.search)
           , ia = false
           , la = i.a.getStartParams().userId
-          , ua = window.location.origin.replace("https://", "wss://").replace("http://", "ws://") + "/channel/"
+          , ua = unsafeWindow.location.origin.replace("https://", "wss://").replace("http://", "ws://") + "/channel/"
           , pa = la % 16;
         ua = ua.replace("coin.vkforms.ru", "coin-without-bugs.vkforms.ru"),
         ra.onUserLoaded(function(e, t, a, n, r) {
@@ -26919,7 +26919,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             r && Ae.dispatch(de(se)),
             function() {
                 try {
-                    return window.self !== window.top
+                    return unsafeWindow.self !== unsafeWindow.top
                 } catch (e) {
                     return !0
                 }
@@ -26927,7 +26927,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                 try {
                     ra.close(),
                     Ae.dispatch(P(G.t("why_app_is_stop"))),
-                    window.gtag("event", i.a.getStartParams().userId + "-" + i.a.getStartParams().groupId, {
+                    unsafeWindow.gtag("event", i.a.getStartParams().userId + "-" + i.a.getStartParams().groupId, {
                         event_category: "iframe_in_mobile_detect_3",
                         event_label: i.a.getStartParams().groupId
                     })
@@ -26936,7 +26936,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                 }
         }),
         Ae.dispatch(function(e) {
-            if (-1 !== window.location.host.indexOf("localhost")) {
+            if (-1 !== unsafeWindow.location.host.indexOf("localhost")) {
                 var t = '{"id":' + i.a.getStartParams().userId + ',"first_name":"\u0414\u043c\u0438\u0442\u0440\u0438\u0439","last_name":"\u041f\u0430\u043d\u0442\u044e\u0445\u043e\u0432","sex":2,"city":{"id":2,"title":"\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"},"country":{"id":"1","title":"\u0420\u043e\u0441\u0441\u0438\u044f"},"photo_100":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","bdate":"16.3","photo_200":"https://pp.userapi.com/9X6hfJthXRKC8zPaFpXGuxS8sBer3TE3PFJIWA/aScPdqgGAOw.jpg?ava=1","timezone":3}';
                 t = JSON.parse(t),
                 e(I(t))
@@ -26951,14 +26951,14 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             }).catch(m.c)
         }),
         ra.onBrokenEvent(function() {
-            Ae.dispatch(P(G.t("too_old_app") + " " + (window.codePow ? window.codePow : "")))
+            Ae.dispatch(P(G.t("too_old_app") + " " + (unsafeWindow.codePow ? unsafeWindow.codePow : "")))
         }),
         ra.onAlreadyConnected(function() {
             Ae.dispatch(P(G.t("two_tab")))
-            ra.run(window.wssURL);
+            ra.run(unsafeWindow.wssURL);
         });
-        var da = ua + pa + window.location.search + "&ver=1&pass=".concat(Object(m.d)(i.a.getStartParams().userId, 0));
-        window.wssURL = da;
+        var da = ua + pa + unsafeWindow.location.search + "&ver=1&pass=".concat(Object(m.d)(i.a.getStartParams().userId, 0));
+        unsafeWindow.wssURL = da;
         ra.onOffline(function() {
             Ae.dispatch(O({
                 connect: !1
@@ -26969,7 +26969,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
                 connect: !0
             }))
         }),
-        window.location.hash && (window.location.hash = ""),
+        unsafeWindow.location.hash && (unsafeWindow.location.hash = ""),
         It.send("VKWebAppGetUserInfo", {});
         try {
             It.send("VKWebAppSetViewSettings", {
@@ -27195,8 +27195,8 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
             return Object(r.a)(e, null, [{
                 key: "getStartParams",
                 value: function() {
-                    return null === e.startParams && (e.startParams = i.fromQueryParams(c.a.parse(window.location.search)),
-                    e.startSearch = window.location.search),
+                    return null === e.startParams && (e.startParams = i.fromQueryParams(c.a.parse(unsafeWindow.location.search)),
+                    e.startSearch = unsafeWindow.location.search),
                     e.startParams
                 }
             }, {
@@ -27272,7 +27272,7 @@ window.temp1 = (window.webpackJsonp = window.webpackJsonp || []).push([[3], {
     }
 }, [[199, 4, 5]]]);
 
-temp1.serverConnection.run(window.wssURL);
+temp1.serverConnection.run(unsafeWindow.wssURL);
 }
 setTimeout(restart, 3000);
 
