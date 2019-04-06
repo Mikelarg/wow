@@ -27056,7 +27056,7 @@ unsafeWindow.temp1 = (unsafeWindow.webpackJsonp = unsafeWindow.webpackJsonp || [
         }),
         sa.onAlreadyConnected(function() {
             Ae.dispatch(P(G.t("two_tab")))
-            window.location.reload();
+            unsafeWindow.location.reload();
         });
         var ma = _a + ha + "/" + unsafeWindow.location.search + "&ver=1&pass=".concat(Object(m.d)(i.a.getStartParams().userId, 0));
         sa.onOffline(function() {
