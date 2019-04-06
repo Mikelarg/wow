@@ -27057,7 +27057,6 @@ unsafeWindow.temp1 = (unsafeWindow.webpackJsonp = unsafeWindow.webpackJsonp || [
         sa.onAlreadyConnected(function() {
             Ae.dispatch(P(G.t("two_tab")))
         });
-        debugger;
         var ma = _a + ha + "/" + unsafeWindow.location.search + "&ver=1&pass=".concat(Object(m.d)(i.a.getStartParams().userId, 0));
         sa.onOffline(function() {
             Ae.dispatch(O({
